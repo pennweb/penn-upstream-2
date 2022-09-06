@@ -20,7 +20,7 @@
         "drupal/core-recommended": "^9.2",
         "pantheon-systems/drupal-integrations": "^9",
         "cweagans/composer-patches": "^1.7",
-        "drush/drush": "^11 || ^12"
+        "drush/drush": "^10 || ^11"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"
@@ -87,7 +87,12 @@
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "zaporylie/composer-drupal-optimizations": true,
+            "drupal/console-extend-plugin": true,
+            "rvtraveller/qs-composer-installer": true,
+            "oomphinc/composer-installers-extender": true,
+            "simplesamlphp/composer-module-installer": true
         }
     }
 }
