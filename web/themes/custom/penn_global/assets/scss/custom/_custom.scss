@@ -1,0 +1,1645 @@
+/**
+ * General
+ */
+
+ .section-padding-top {
+  @include section-padding-top(true);
+}
+
+.section-padding-bottom {
+  @include section-padding-bottom(true);
+}
+
+/**
+ * Accordions
+ */
+.accordion-columns {
+  .accordion-columns__content {
+    .accordion-columns__col {
+      @media #{$tablet-down} {
+        //Remove gap between accordion columns on smaller devices
+        .js-wikit-accordion {
+          margin-bottom: 0;
+        }
+        //Add a margin to not-first-child headers to compensate for removing the gap above
+        &:not(:first-child) {
+          .accordion-columns__title {
+            margin-top: 54px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Article Card Hero 
+ */
+ 
+ .article-card {
+
+  //optional decorative borders
+  &--without-borders {
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    &::after {
+      content: none;
+    }
+  }
+
+  //Remove eye candy for unlinked heroes
+  &--without-link {
+    .article-card__link::before {
+      content: none;
+    }
+	  &.is-hovered,
+    &:focus-within {
+      .article-card__link {
+        text-decoration: none;
+      }
+      .article-card__image {
+        transform: none;
+      }
+    }
+    .article-card__category:hover, 
+    .article-card__category:focus,
+    .article-card__link:hover, 
+    .article-card__link:focus {
+      text-decoration: none;
+  
+    } 
+    a.article-card__category:hover, 
+    a.article-card__category:focus,
+    a.article-card__link:hover, 
+    a.article-card__link:focus {
+      text-decoration: underline;
+    }    
+  }
+}
+
+ 
+/**
+ * Search
+ */
+
+//Fixes search outline becoming offset at screens > 1400px
+#header:after {
+  left: 9px;
+  @media #{$xxlarge-up} {
+    top: 141px;
+  }
+}
+
+// Remove excess padding
+.layout--search {
+  &.border-top {
+    padding-top: 0;
+  }
+  &.border-bottom {
+    padding-bottom: 0;
+  }
+}
+
+// Increase input height
+.search__input {
+  font-size: 2.8rem;
+}
+
+.search__label {
+  font-size: 2.5rem;
+}
+
+//Vertically center the search input
+.header .search {
+  margin-top: 40px;
+}
+
+/**
+ * Tabs
+ */
+.tabs__button {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.wikit-tab {
+  .card-listing {
+    padding: 0;
+  }
+}
+
+/*
+ * Blockquote
+ */
+.bg-blue,
+.bg-red {
+  blockquote {
+    p {
+      font-size: 3rem;
+    }
+    cite {
+      color: #fff;
+    }
+  }
+}
+
+.wysiwyg blockquote {
+  margin-bottom: 50px;
+}
+
+/*
+ * Cards
+ */
+
+.card {
+  .card__title {
+    color: $blue;
+  }
+}
+.content-aside .card a:not(.btn) {
+  color: $blue;
+}
+
+/**
+ * Card Listing (2 and 3 Across Cards)
+ */
+
+//Correct text styling for bg-color wysiwyg
+.bg-blue .card-listing, 
+.bg-red .card-listing, 
+.bg-blue .card-slider, 
+.bg-red .card-slider, 
+.card-listing,
+.card-slider { 
+    .card__content {
+      .wysiwyg {
+        p {
+          color: $text-color;
+          margin-bottom: 2em;
+        }
+        a:not(.btn) {
+          color: $blue;
+        }
+        a.btn:not(.btn--outline) {
+          color: white;
+        }
+      }
+    }
+}
+
+
+.card-listing .card--align-left {
+  text-align: left;
+}
+
+.card-listing .card--align-center {
+  text-align: center;
+}
+
+.card-listing .card--align-right {
+  text-align: right;
+}
+
+// honor link--red class
+.card__content a.link--red {
+  color: $red;
+}
+
+.card__content.text-align--left {
+  text-align: left;
+}
+
+//override default border styling
+//make links the correct color
+.card {
+  &__content {
+    border: 2px solid #e3e4e6;
+    a:not(.btn)  {
+      color: $blue;
+    }
+  }
+  &__with-image {
+    .card__content {
+      border-top: none;
+    }
+  }
+}
+
+/** 
+ * Listing Cards
+ */
+
+ .listing-card {
+  &--without-link {
+	  &.is-hovered,
+    &:focus-within {
+      .listing-card__image {
+        transform: none;
+      }
+    } 
+  }
+  &--without-image {
+    .listing-card__detail {
+      flex: auto;
+    }
+  }
+}
+
+.listing-card--no-image {
+  .listing-card__detail {
+    flex: auto;
+  }
+}
+
+.listing-card__title  {
+  color: $blue;
+}
+
+/** 
+ * Content Aside
+ */
+.content-aside {
+  //Style generic containers in asides
+  .wysiwyg-container {
+    padding: 15px 35px;
+    margin-bottom: 25px;
+  }
+  //Remove WDG's padding to use "section-padding" instead
+  padding: 0;
+  .social {
+    padding: 0;
+  }
+}
+
+/**
+ * Content Spotlight
+ */
+#content .content-spotlight:last-child {
+  margin-bottom: 0;
+}
+
+/*
+ * Faculty Cards
+ */
+.faculty-card__description {
+  p, a {
+    opacity: 0.68;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1.6rem;
+    color: #000f3a;
+    line-height: 1.5625;
+    margin-bottom: 7px;
+    margin-top: 0;
+  }
+  a {
+    opacity: 1;
+  }
+}
+
+//Fix multi-line title bug
+.faculty-card__title {
+  line-height: 1.4;
+  margin-top: 8px;
+  margin-bottom: 42px;
+  text-transform: none;
+  &::after {
+    top: initial;
+    margin-top: 18px;
+  }
+}
+
+//Last child should have a border
+.faculty-grid .faculty-card:last-child {
+  border-right: 1px solid #DFDFDF;
+}
+
+//Add a top border to items in the first row
+//Adjust for device size
+.faculty-card.without-image {
+  &::before {
+    display: block;
+    content: none;
+    width: calc(100% - 40px);
+    height: 1px;
+    background: #dfdfdf;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  @media #{$xlarge-up} {
+    &:nth-child(-n + 4) {
+      padding-top: 20px;
+      &::before {
+        content: "";
+      }
+    }
+  }
+  @media #{$large-up} {
+    &:nth-child(-n + 3) {
+      padding-top: 20px;
+      &::before {
+        content: "";
+      }
+    }
+  }
+  @media #{$small-up} {
+    &:nth-child(-n + 2) {
+      padding-top: 20px;
+      &::before {
+        content: "";
+      }
+    }
+  }
+  @media #{$xsmall-only} {
+    &:nth-child(-n + 1) {
+      padding-top: 20px;
+      &::before {
+        content: "";
+      }
+    }
+  }
+}
+
+/*
+ * Grids
+ */
+
+//text should be white in colored grid cards
+.bg-blue,
+.bg-red {
+  .grid-card {
+    p {
+      color: #fff;
+    }
+  }
+}
+
+.grid {
+  &.bg-color {
+    @include section-padding-top(true);
+    @include section-padding-bottom(true);
+  }
+}
+
+/**
+ * Main Nav Menu
+ */
+
+// Fixes homepage main nav link color when dropdowns are activated via keyboard navigation. Without this, the links are unreadable white-on-white.
+.homepage .header:not(.headroom--not-top) {
+  @media #{$large-up} {
+    .nav__menu--level-0 > .nav__menu-item.nav__menu-item--open {
+      .nav__menu-link--children {
+        color: $primary;
+      }
+      .nav__menu-hassub .nav__menu-button svg {
+        fill: $primary;
+      }
+    }
+  }
+}
+// Add focus indicator to nav dropdown buttons (especially mobile)
+.nav__menu-button.nav__menu-button--level-0 {
+  &:focus {
+    border: 1px solid $gray-border;
+    background: rgba($gray-border, 0.5);
+  }
+}
+// Prevent color contrast errors for header search close button, and fix focus indicator
+.search--header .search__close {
+  background-color: $primary;
+  .keyboard--focus &:focus {
+    outline: 1px dotted #fff;
+  }
+}
+
+/**
+ * Local Tasks Menu
+ */
+
+#block-penn-global-local-tasks,
+#block-penn-starter-local-tasks {
+  z-index: 10;
+  top: 200px;
+  right: 0;
+  background: white;
+  position: absolute;
+  padding: 10px 40px 10px 0px;
+  border: 2px solid #ddd;
+  li {
+    margin: 0 10px;
+    list-style-type: none;
+    color: $red;
+    margin: 6px 0;
+    a {
+      color: $red;
+      font-size: 14px;
+    }
+  }
+}
+
+/**
+ * CKEditor
+ */
+.ckeditor-accordion {
+  background: #011f5b;
+  color: #fff;
+}
+
+drupal-entity {
+  width: 100%;
+}
+
+//make text white when ckeditor has red or blue background.
+.cke_editable.bg-color.bg-blue,
+.cke_editable.bg-color.bg-red {
+  a:not(.btn) {
+    color: white;
+  }
+  @for $i from 1 through 6 {
+    h#{$i} {
+      color: white;
+    }
+  }
+}
+
+/*
+ * Contact Cards
+ */
+.contact-information__columns {
+  justify-content: center;
+  text-align: left;
+  .contact-information__column:only-child {
+    padding: 0;
+    flex: 0 1 auto;
+  }
+}
+
+.contact-information__column__title.contact-information__column__subtitle {
+  margin-bottom: 21px;
+}
+
+//Gray contact card by request
+.contact-information.contact-information--gray,
+.contact-information.contact-information--white {
+  background: $gray;
+  .contact-information__title__link,
+  .contact-information__wrap,
+  p {
+    color: $blue;
+  }
+  .contact-information__title::after {
+    background: $blue;
+    opacity: 0.4;
+  }
+  .contact-information__wrap {
+    border: 1px solid rgba(1, 31, 91, 0.15);
+  }
+
+  .contact-information__column:first-child {
+    border-color: rgba(1, 31, 91, 0.15);
+  }
+}
+
+//White contact card by request
+.contact-information.contact-information--white {
+  background: white;
+  border: 1px solid rgba(1, 31, 91, 0.2);
+  .contact-information__icon {
+    opacity: 0.9;
+  }
+  .contact-information__wrap {
+    border: 1px solid rgba(1, 31, 91, 0.2);
+  }
+  .contact-information__column:first-child {
+    border-color: rgba(1, 31, 91, 0.2);
+  }
+}
+
+// Contact Cards in a content aside
+.content-aside__aside .contact-information:last-child {
+  margin-bottom: 0;
+}
+
+//Stack content-aside contact info columns between two breakpoints
+.content-aside__aside {
+  @media #{$tablet-up} and #{$xlarge-down} {
+    .contact-information {
+      padding: 10px;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      text-align: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      .contact-information__wrap {
+        .contact-information__columns {
+          display: block;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          text-align: left;
+          .contact-information__column {
+            padding: 0;
+
+            -webkit-box-flex: 0;
+            -ms-flex: 0 1 260px;
+            flex: 0 1 260px;
+          }
+          .contact-information__column:first-child {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+            border-right: none;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+          }
+          .contact-information__column:last-child {
+            .contact-information__column:last-child {
+              border-bottom: none;
+            }
+          }
+          .contact-information__column:only-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Adjust contact column padding in a content-aside
+.content-aside__aside .contact-information__columns {
+  @media #{$xlarge-up} {
+    .contact-information__column:first-child {
+      padding-right: 20px;
+    }
+    .contact-information__column:last-child {
+      padding-left: 20px;
+    }
+    .contact-information__column:only-child {
+      padding: 0;
+    }
+  }
+}
+
+.contact-information-contain .contact-information {
+  @media #{$large-up} {
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Events
+ */
+ .event-card__event-end-date {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #000f3a;
+  letter-spacing: 1.6px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.event-card.event-card--static {
+  //Fix event card styles when in a wysiwyg
+  .wysiwyg {
+    p {
+      @media #{$large-up} {
+        font-size: 1.6rem;
+        line-height: 1.5625;
+      }
+      font-size: 1.4rem;
+      color: rgba(1, 31, 91, 0.68);
+      letter-spacing: 0;
+      line-height: 1.785714286;
+    }
+  }
+  .contact-information__column__title {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;    
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #000f3a;
+    letter-spacing: 1.6px;
+    line-height: 1.6;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}
+
+/**
+ * Facts
+ */
+.fact-bars {
+  .section-footer {
+    padding: 0 7px;
+  }
+  .section-footer,
+  .section-footer p {
+    font-size: 1.6rem;
+    color: #011f5b;
+    opacity: 0.85;
+  }
+  @media #{$small-down} {
+    .fact-bar__fact {
+      line-height: 1em;
+    }
+  }
+}
+
+//Facts, but not facts--25
+.facts:not(.facts--25) {
+
+  //Make facts switch to the row layout below large
+  @media #{$large-down} {
+    .facts__wrap {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+  }
+
+  //Border should be on last-child, not 4n
+  .fact {
+    &:nth-child(4n) {
+      border-right: none;
+    }
+  }
+}
+
+
+.fact {
+  @media #{$tablet-down} {
+    &:first-of-type {
+      padding-top: 0;
+    }
+
+    &:last-of-type {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  @media #{$large-up} {
+    /* override fact styles in a wysiwyg */
+    &__title,
+    .wysiwyg &__title {
+      font-family: $serif;
+      font-size: 5.2rem;
+      color: $blue;
+      letter-spacing: 0;
+      line-height: 0.64516129;
+      font-weight: 400;
+      margin: 0 0 2.4rem;
+
+      @media #{$tablet-up} {
+        font-size: 6.2rem;
+      }
+    }
+
+    &__caption,
+    .wysiwyg &__caption {
+      opacity: 0.68;
+      font-size: 1.4rem;
+      color: $blue;
+      line-height: 1.5625;
+      text-align: center;
+
+      @media #{$tablet-up} {
+        font-size: 1.6rem;
+        padding: 0 15px;
+      }
+
+      @media #{$xxlarge-up} {
+        padding: 0 35px;
+      }
+    }
+  }
+}
+
+//mimics "fact--50" class in a column layout
+.layout__column {
+  .facts {
+    @media #{$large-down} {
+      .section-header--centered--small {
+        text-align: center;
+        .section-header__title::after {
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+        }
+      }
+    }
+    .fact {
+      @media #{$tablet-up} {
+        border-left: 1px solid #dfdfdf;
+        border-bottom: none;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+        flex: 0 1 50%;
+        width: 50%;
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+}
+
+//Fixes border dropping off on a fact card
+.fact.fact--card {
+  border-bottom: 5px solid #e3e4e6;
+}
+
+//Styles for fact card embedded in wysiwyg
+.wysiwyg {
+  .fact {
+    padding: 32px 10px;
+    .fact__title {
+      font-family: "EB Garamond", serif;
+      font-size: 5.2rem;
+      color: #011f5b;
+      letter-spacing: 0;
+      line-height: 0.64516129;
+      font-weight: 400;
+      margin: 0 0 2.4rem;
+      @media #{$tablet-up} {
+        font-size: 6.2rem;
+        line-height: 0.945;
+      }
+    }
+    .fact__caption {
+      font-size: 1.4rem;
+      padding: 0 15px;
+      opacity: 0.68;
+      color: #011f5b;
+      line-height: 1.5625;
+      text-align: center;
+      @media #{$tablet-up} {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+/**
+ * Fact Sidebar
+ */
+.facts-sidebar {
+  .facts-sidebar__title {
+    text-align: center;
+    &:after {
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/** Featured Story
+ *
+ */
+.featured-story {
+  @media #{$large-up} {
+    .featured-initiative-card {
+      display: inline-block;
+    }
+    &--right {
+      .featured-story__contain {
+        text-align: right;
+      }
+    }
+    &--center {
+      .featured-story__contain {
+        text-align: center;
+      }
+    }
+  }
+}
+
+/**
+ * Featured Initiative Card
+ */
+
+.featured-initiative-card__wrap {
+  height: 100%;
+}
+
+//constrain initiative card image titles
+.featured-initiative-card {
+  .featured-initiative-card__image {
+    max-width: 90%;
+    @media #{$large-up} {
+      max-width: 290px;
+    }
+  }
+}
+
+//Gray initiative card
+.featured-initiative-card--gray {
+  background: $gray;
+  border: 1px solid rgba(1, 31, 91, 0.05);
+
+  .contact-information__title__link,
+  .featured-initiative-card__wrap,
+  p {
+    color: $blue;
+  }
+  .featured-initiative-card__title::after {
+    background: $blue;
+    opacity: 0.4;
+  }
+  .featured-initiative-card__wrap {
+    border: 1px solid rgba(1, 31, 91, 0.15);
+  }
+  .btn--outline-white-secondary {
+    background: none;
+    color: #011f5b;
+    border: 1px solid rgba(118, 118, 118, 0.2);
+  }
+   //possibly delete 
+  .is-hovered .btn,
+  .btn:hover,
+  .btn:focus {
+    background: #00102f;
+  }
+  //^
+
+  //override the button styles to match rather than changing the class in the template
+  .is-hovered .btn--outline-white-secondary,
+  .btn--outline-white-secondary:hover,
+  .btn--outline-white-secondary:focus {
+    background: #011f5b;
+    color: #fff;
+  }
+}
+
+
+/**
+ * Image Slider
+ */
+
+.image-slider-card__caption {
+  margin-bottom: 25px;
+}
+
+.image-slider-card__content p {
+  opacity: 1;
+}
+
+.bg-blue,
+.bg-red {
+  .image-slider-card__caption,
+  .image-slider-card__title,
+  .image-slider-card__title a,
+  .wysiwyg {
+    color: white;
+  }
+}
+
+//Enlarge hitbox for the buttons
+.image-slider-card__buttons {
+  width: 100px;
+  .image-slider-card__button {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/**
+ * Layout Columns
+ */
+//Remove default margin.
+//Margins are added by 'section-margin' instead.
+.layout:not(.section-margin, .section-margin-top, section-margin-bottom) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/**
+ * Callouts
+ */
+
+// Standardize headings
+@for $i from 1 through 6 {
+  .callout__column h#{$i} {
+    font-family: "EB Garamond", serif;
+    color: #011f5b;
+    letter-spacing: 0;
+    position: relative;
+    font-weight: 400;
+    margin-bottom: 0;
+    font-size: 2.8rem;
+    line-height: 1.25;
+    color: inherit;
+    margin-top: 0;
+  }
+}
+
+//Last paragraph doesn't need padding
+.callout p:last-child,
+.text-cta p {
+  margin-bottom: 0;
+}
+
+//Lose the margins on buttons in callouts
+.callout p {
+  .btn:last-child {
+    margin-bottom: 0;
+  }
+}
+
+//Allow CTAs to have multiple paragraphs
+.text-cta p {
+  margin-bottom: inherit;
+}
+
+//text should be white in background-colored items
+.callout,
+.callout__column {
+  &.bg-blue,
+  &.bg-red,
+  &.wysiwyg.bg-blue,
+  &.wysiwyg.bg-red {
+    p {
+      color: #fff;
+    }
+    a:not(.btn) {
+      color: #fff;
+    }
+  }
+  @media #{$tablet-down} {
+    //Force centered text below the point that columns become vertical
+    text-align: center;
+    .text-align-right,
+    .text-align-left {
+      text-align: center;
+    }
+  }
+}
+
+/**
+ * Homepage Hero
+ */
+.hero {
+  &__content {
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+    //increase text box width
+    @media #{$large-up} {
+      max-width: 800px;
+    }
+  }
+  //Don't hide excerpt on touch-devices
+  &__text {
+    @media (hover: none) and (pointer: coarse) {
+      transition: none;
+      .hero__excerpt {
+        height: auto;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  //Fix safari/ff not observing max-height
+  &__title {
+    @media (min-width: 1024px), (max-height: 825px) {
+      font-size: 4.8rem;
+    }
+  }
+}
+
+/**
+ * Page Quote Hero
+ */
+// Add default/fallback background color to prevent color contrast errors in WAVE
+// This color will never be visually seen, but prevents false positives in reports.
+.page-header-hero__figure--quote {
+  background: $blue;
+}
+
+/**
+ * WYSIWYG
+ */
+
+.clearfix {
+  @include clearfix;
+}
+
+//Make wysiwyg class more flexible with bg-color
+@for $i from 1 through 6 {
+  .wysiwyg.bg-blue h#{$i},
+  .wysiwyg.bg-red h#{$i} {
+    font-family: "EB Garamond", serif;
+    color: #011f5b;
+    letter-spacing: 0;
+    position: relative;
+    font-weight: 400;
+    margin-bottom: 0;
+    font-size: 2.8rem;
+    line-height: 1.25;
+    color: inherit;
+    margin-top: 0;
+  }
+}
+  //WYSIWYG
+  .wysiwyg {
+    &.bg-blue p,
+    &.bg-red p {
+      color: #fff;
+    }
+
+  //Remove list-style for tabs
+  // And social media icons
+  .js-wikit-tabbed [role="tablist"] li,
+  .social__item {
+    &::before {
+    content: none;
+    }
+  }
+  .social__media {
+    .a11y {
+      display: none;
+    }    
+    .social__list {
+      justify-content: left;
+      margin-bottom: 0;
+      li {
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+    }    
+  }
+
+  //Fix <p> inside figcaption
+  figcaption {
+    p {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 1.5rem;
+      color: #434343;
+      letter-spacing: 0;
+      line-height: 1.866666667;
+      padding-top: 5px;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+    p:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+
+  h2.plain::after,
+  h1.plain::after {
+    content: none;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+    @media #{$small-down} {
+      font-size: 4rem;
+    }
+  }
+
+  // Make h2 match content aside h2
+  h2,
+  .h2 {
+    @media #{$large-up} {
+      font-size: 4.5rem;
+    }
+  }
+
+  p {
+    color: #000;
+  }
+
+  //Colors
+  .text__light-blue {
+    color: $light_blue;
+  }
+  .text__yellow {
+    color: $yellow;
+  }
+
+  //Text
+  .text__sans-serif {
+    font-family: $sans;
+  }
+  .text__x-large {
+    font-size: 10rem;
+  }
+
+} 
+// Prevent image floating on smaller devices
+.wysiwyg {
+  figure {
+    @media #{$tablet-down} {
+      &.align-left {
+        float: initial;
+        margin: 0 auto 40px auto;
+        width: 100%;
+
+        img {
+          display: block;
+          margin: 0 auto;
+        }
+
+        figcaption {
+          margin: 0 auto;
+        }
+      }
+
+      &.align-right {
+        float: initial;
+        margin: 0 auto 40px auto;
+        width: 100%;
+
+        img {
+          display: block;
+          margin: 0 auto;
+        }
+
+        figcaption {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+//Position the small line following positioned headings
+.text-align-center {
+  &::after {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+.text-align-right {
+  &::after {
+    right: 0;
+  }
+}
+
+/**
+ * Images 
+ */
+
+//centered images
+figure {
+  &.align-center {
+    text-align: center;
+  }
+}
+
+/**
+ * Content Gallery
+ */
+
+.content-gallery {
+  &__column {
+    //Style links
+    .text-cta a {
+      color: #011f5b;
+      text-decoration: underline;
+    }
+    //Prevent long captions from moving the right side copy up and down
+    @media #{$tablet-up} {
+      align-self: normal;
+    }
+  }
+  // Hide < > chevron controls on smaller devices
+  @media #{$large-down} {
+    .gallery__navigation {
+      .gallery__arrows {
+        display: none;
+      }
+      .slick-dots {
+        width: 100%;
+      }
+    }
+  }
+}
+/**
+ * Section Footer
+ */
+.section-footer {
+  width: 100%;
+  &--centered {
+    text-align: center;
+  }
+  .btn {
+    margin-top: 20px;
+  }
+}
+
+.footer__logo {
+  min-width: 170px;
+  max-width: 200px;
+}
+
+/**
+ * Upstream Footer 
+ */
+ .footer.footer__upstream {
+  .footer__logo {
+    min-width: 170px;
+    max-width: 200px;
+  }
+}
+
+/**
+ * Social Grid
+ */
+
+//Move the margins/padding from icons to the actual grid.
+//This is so the icons can be used independently of the cards
+.social__grid {
+  margin-right: 0px;
+  padding-bottom: 20px;
+  &.slick-dotted.slick-slider {
+    margin-bottom: 100px;
+  }  
+}
+
+
+.social__media {
+  margin: 20px 0;
+}
+
+.social__item {
+  margin-top: 0;
+  margin-bottom: 0;
+  @media #{$tablet-down} {
+    margin-top: 10px;
+  }
+}
+
+// Twitter cards, background colors
+.social-card.social-card__twitter {
+  margin-bottom: 0;
+  &.bg-color {
+    margin: 0;
+  }
+  &.bg-red {
+    background: $red;
+  }
+  &.bg-blue {
+    background: $blue;
+  }
+  &.bg-gray {
+    background: $gray;
+    color: $blue;
+    .social-card__icon {
+      background: $blue;
+    }
+    .social-card__user {
+      color: $blue;
+    }
+  }
+  &:not(.bg-color) {
+    background: white;
+    color: $blue;
+    .social-card__icon {
+      background: $blue;
+    }
+    .social-card__user {
+      color: $blue;
+    }
+  }
+}
+
+//Instagram cards, background colors
+.social-card--image {
+  &.bg-color {
+    margin: 0;
+  }
+  &.bg-red {
+    .social-card__content {
+      background: rgba($red, 0.8);
+    }
+  }
+  &.bg-blue {
+    .social-card__content {
+      background: rgba($blue, 0.8);
+    }
+  }
+  &.bg-gray {
+    .social-card__content {
+      background: rgba($gray, 0.8);
+      color: $blue;
+      .social-card__icon {
+        background: $blue;
+        border: none;
+      }
+      .social-card__user {
+        color: $blue;
+      }
+    }
+  }
+  &:not(.bg-color) {
+    .social-card__content {
+      background: rgba(white, 0.8);
+      color: $blue;
+      .social-card__icon {
+        background: $blue;
+        border: none;
+      }
+      .social-card__user {
+        color: $blue;
+      }
+    }
+  }
+}
+
+//Make the bg-gray bg-light-gray for social
+.social {
+  &.bg-gray {
+    background: $gray-light;
+  }
+}
+
+// Keeps the social cards squared on Safari
+.social-card {
+  max-height: 413px;
+  @media #{$tablet-down} {
+    max-height: 300px;
+  }
+}
+
+.social__link.flickr .social__icon {
+  max-width: 20px;
+}
+
+.social__link.youtube .social__icon {
+  max-width: 21px;
+}
+
+.social__link.linkedin .social__icon {
+  max-width: 16px;
+}
+
+//remove the social link hover for background color compatibility
+.social__link:hover {
+  background: none;
+}
+
+/**
+ * Navigation
+ */
+// Keeps header sticky - JS forces positon absolute otherwise
+.header {
+  .header-sticky & {
+    @media #{$large-down} {
+      position: fixed !important;
+    }
+  }
+}
+/*
+ * Form Styling
+ */
+
+select {
+  margin-bottom: 15px;
+  padding: 10px 60px 10px 0;
+  border: none;
+  border-bottom: 1px solid $gray-border;
+  appearance: none;
+  font-family: $serif;
+  font-size: 1.8rem;
+  color: $blue;
+  outline: 0;
+  background-image: url(/themes/custom/penn_global/assets/img/svg/icon-down-triangle.svg);
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+#edit-password {
+  font-size: 2.2rem;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+#edit-submit {
+  position: relative;
+  width: 205px;
+  font-size: 2.2rem;
+  font-family: $serif;
+  padding: 10px 20px;
+  border-radius: 0;
+  border: 0;
+  background-color: #011f5b;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.js-form-required {
+
+  &.form-required {
+    visibility: hidden;
+    font-size: 0;
+  }
+
+}
+
+/**
+ * Penn API News Filter
+ */
+
+// Apply original padding to the news filter after moving it to a different twig template
+.news-featured {
+  @media #{$small-up} {
+    .filter-section .section-header__title {
+      width: calc(100% - 235px);
+    }
+  }
+}
+
+/**
+ * Video
+ */
+
+ //Modify the video button to be larger for non-autoplay videos
+.video-inline:not(.video-autoplay) {
+  .video-button__circle {
+    background: rgba(0, 0, 0, 0.75);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 100%;
+    height: 80px;
+    left: calc(50% - 41px);
+    position: absolute;
+    top: calc(50% - 41px);
+    width: 80px;
+    @media #{$small-up} {
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      height: 140px;
+      left: calc(50% - 72px);
+      position: absolute;
+      top: calc(50% - 72px);
+      width: 140px;
+    }
+  }
+
+  .video-button--play .icon {
+    background: url(/themes/custom/penn_global/assets/img/svg/icon-play.svg)
+      no-repeat 53% 50%;
+    background-size: 30px 30px;
+    @media #{$small-up} {
+      background-size: 35px 50px;
+    }
+  }
+
+  .video-button:hover .video-button__circle,
+  .video-button:focus .video-button__circle {
+    background: rgba(0, 0, 0, 0.75);
+  }
+}
+
+//Modal video with card
+//Modal Video
+.video-w-card {
+  &__icons__circle {
+    background: rgba(0, 0, 0, 0.25);
+    border: 4px solid #fff;
+    width: 64px;
+    height: 64px;
+  }
+  &__icons .play {
+    background-position: 58% 50%;
+  }
+  &__icons .expand {
+    width: 64px;
+    height: 64px;
+  }
+  &__button:hover &__icons__circle,
+  &__button:focus &__icons__circle {
+    background: rgba(0, 0, 0, 0.25);
+  }
+}
+
+/**
+ * 404
+ */
+.page-error__404 {
+  .page-header-hero__image {
+    height: 711px;
+    width: 711px;
+  }
+}
+
+/**
+ * Homepage Video Hero
+ */
+
+ .hero.hero-homepage-video {
+  position: relative;
+
+ &::after {
+   content: " ";
+   position: absolute;
+   width: 100vw;
+   height: 100vh;
+   background: black;
+   opacity: 0;
+   animation-name: fadefromblack;
+   animation-duration: 3s;
+ }
+
+ .video {
+   display: none;
+ }
+ @media all and (min-width: 840px) {
+   height: auto;
+   min-height: auto;
+   opacity: 1;
+   animation-name: showvideo;
+   animation-duration: 2s;
+   .contain {
+     z-index: initial;
+   }
+   .video {
+     display: block;
+     margin: 0;
+
+     .fitvid {
+       padding-top: 56.25%;
+     }
+   }
+   &.hero--text-left {
+     .video-button__circle {
+       right: 27px;
+       left: initial;
+     }
+   }
+   .hero__shadows {
+     &:before {
+       position: absolute;
+       left: 0;
+       bottom: 0;
+       content: '';
+       display: block;
+       width: 100%;
+       opacity: 0.8;
+       background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,.77)));
+       background-image: linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.77) 100%);
+       opacity: 0.8;
+       height: 35.9%;
+       height: 359px;
+     }
+   }
+ }
+}
+
+@keyframes showvideo {
+  from {opacity: 0;}
+  to {opacity: 1;}
+ }
+ 
+ @keyframes fadefromblack {
+  from {opacity: 1;}
+  to {opacity: 0;}
+ }
+
+/**
+* Background Colors
+*/
+  
+//Overrides for WDGs mysterious negative margins go here
+.bg-color.card-slider + .bg-color {
+  margin-top: auto;
+}
+
+/**
+* Alert
+*/
+
+.alert {
+	@media #{$large-up} {
+		text-align: none;
+	}
+}

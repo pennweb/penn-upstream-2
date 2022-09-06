@@ -1,0 +1,50 @@
+{# Add a class for video if source url is set #}
+{% if content.field_video_source_url_has_value %}
+  {% set hero_homepage_video_class = 'hero-homepage-video' %}
+{% endif %}
+
+<section class="{{ content.field_hero_style}} {{ content.field_text_align }} {{ hero_homepage_video_class }}" data-hero="hero1">
+  <div class="hero__shadows"></div>
+  {# show video if source url field is set #}
+  {% if content.field_video_source_url_has_value %}
+    <div class="video">
+      <div class="video-inline video-autoplay">
+        <video loop muted playsinline autoplay="autoplay" class="video-inline__video ">
+          <source src="{{ content.field_video_source_url }}" type="video/mp4"/>
+        </video>
+        <button class="video-button video-button--play-toggle video-button--pause">
+          <span class="video-button__circle">
+            <span class="icon"></span>
+          </span>
+          <span class="a11y">Play</span>
+        </button>
+      </div>
+    </div>
+  {% endif %}
+  <div class="contain contain--wide">
+    <div class="hero__content">
+      <div class="hero__text">
+        <h3 class="hero__category">{{ content.field_subtitle }}</h3>
+        <a href="{{ content.field_link }}" class="hero__link">
+          <h1 class="hero__title">
+            {{ content.field_title }}
+          </h1>
+          {{ content.field_description }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .hero[data-hero="hero1"] {
+    background-image: url({{ content.field_image_mobile }});
+  }
+  @media(min-width:640px) {
+    .hero[data-hero="hero1"] {
+      background-image: url({{ content.field_image }});
+    }
+  }
+  {# .hero[data-hero="hero2"] {
+    background-image: url({{ content.field_image }});
+  } #}
+</style>
