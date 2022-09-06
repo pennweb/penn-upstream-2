@@ -117,6 +117,11 @@
   margin-top: 40px;
 }
 
+//Hide refinement labels
+.gs-per-result-labels {
+  display: none;
+}
+
 /**
  * Tabs
  */
@@ -201,6 +206,19 @@
 
 .card-listing .card--align-right {
   text-align: right;
+}
+
+.card-listing {
+  .card {
+    &__content {
+      //Force blue headings
+      @for $i from 1 through 6 {
+        .wysiwyg h#{$i} {
+          color: $blue;
+        }
+      }
+    }
+  }  
 }
 
 // honor link--red class
@@ -415,6 +433,18 @@
   background-color: $primary;
   .keyboard--focus &:focus {
     outline: 1px dotted #fff;
+  }
+}
+
+//Set a min height on the header when there are no main nav items
+#header {
+  .header__menus {
+    &.without-primary-nav {
+      min-height: 48px;
+      @media #{$xxlarge-up} {
+        min-height: 51px;
+      }
+    }
   }
 }
 
@@ -821,9 +851,10 @@ drupal-entity {
   }
 }
 
-/** Featured Story
- *
+/**
+ * Featured Story / Initiative Card
  */
+
 .featured-story {
   @media #{$large-up} {
     .featured-initiative-card {
@@ -841,10 +872,6 @@ drupal-entity {
     }
   }
 }
-
-/**
- * Featured Initiative Card
- */
 
 .featured-initiative-card__wrap {
   height: 100%;
@@ -898,6 +925,76 @@ drupal-entity {
     color: #fff;
   }
 }
+
+//Options to override card width
+.featured-story {
+  @media #{$tablet-up} {
+    &.custom-width {
+      .featured-story__contain {
+        padding: 0;
+        max-width: 100%;
+      }
+      @media #{$large-up} {
+        .featured-initiative-card p {
+          max-width: 80%;
+          width: 80%;
+        }
+      }
+      .featured-initiative-card {
+        max-width: 100%;
+      }
+
+      &.width {
+        &--100 .featured-initiative-card{
+          width: 100%;
+        }
+
+        &--95 .featured-initiative-card{
+          width: 95%;
+        }
+        &--90 .featured-initiative-card{
+          width: 90%;
+        }
+
+        &--85 .featured-initiative-card{
+          width: 85%;
+        }
+        &--80 .featured-initiative-card{
+          width: 80%;
+        }
+
+        &--75 .featured-initiative-card{
+          width: 75%;
+        }
+        &--70 .featured-initiative-card{
+          width: 70%;
+        }
+
+        &--65 .featured-initiative-card{
+          width: 65%;
+        }
+        &--60 .featured-initiative-card{
+          width: 60%;
+        }
+
+        &--55 .featured-initiative-card{
+          width: 55%;
+        }
+        &--50 .featured-initiative-card{
+          width: 50%;
+        }
+
+        &--45 .featured-initiative-card{
+          width: 45%;
+        }
+        &--40 .featured-initiative-card{
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
 
 
 /**
@@ -1029,6 +1126,14 @@ drupal-entity {
   &__title {
     @media (min-width: 1024px), (max-height: 825px) {
       font-size: 4.8rem;
+    }
+  }
+}
+
+.hero-homepage {
+  &.background--center-top {
+    @media #{$small-up} {
+      background-position: center top;
     }
   }
 }
@@ -1407,6 +1512,30 @@ figure {
 //remove the social link hover for background color compatibility
 .social__link:hover {
   background: none;
+}
+
+//Modify the spacing on social to allow the icons to be used alone, without breaking existing layouts
+//Retain WDG's flagship social layout
+.penn-priorities + .social {
+  padding: 61px 0;
+  @media #{$large-up} {
+    padding: 20px 0 90px;
+  }
+}
+.social {
+  //Remove default padding, use the padding drop down on the entity
+  padding: 0;
+  //use modified spacing
+  .social__media {
+    margin: 0;
+    padding: 20px 0;  
+  }
+  //use default spacing
+  .section-header + .social__media,
+  .social__grid + .social__media {
+    margin: 20px 0;
+    padding: 0;
+  }
 }
 
 /**
