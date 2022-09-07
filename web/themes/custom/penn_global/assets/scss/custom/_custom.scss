@@ -1524,9 +1524,7 @@ figure {
 }
 .social {
   //Remove default padding, use the padding drop down on the entity
-  &:not(.section-padding) {
-    padding: 0;
-  }
+  padding: 0;
   //use modified spacing
   .social__media {
     margin: 0;
@@ -1609,13 +1607,6 @@ select {
       width: calc(100% - 235px);
     }
   }
-}
-
-/**
- * Quicklinks
- */
- .quick-links--wide {
-  margin-bottom: 0;
 }
 
 /**

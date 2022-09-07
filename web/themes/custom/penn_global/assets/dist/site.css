@@ -13789,7 +13789,7 @@ figure.align-center {
   }
 }
 
-.social:not(.section-padding) {
+.social {
   padding: 0;
 }
 
@@ -13864,13 +13864,6 @@ select {
   .news-featured .filter-section .section-header__title {
     width: calc(100% - 235px);
   }
-}
-
-/**
- * Quicklinks
- */
-.quick-links--wide {
-  margin-bottom: 0;
 }
 
 /**
