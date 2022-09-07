@@ -55,6 +55,8 @@ settings:
   plugins:
     stylescombo:
       styles: "p.featured|Paragraph Featured\r\np.large|Paragraph Large\r\na.btn.btn--outline|Button (Outlined)\r\na.btn.btn--outline-white|Button (White)\r\na.btn|Button (Blue)\r\na.btn.btn--secondary|Button (Red)\r\na.cta|Link (CTA)\r\na.cta.cta--arrow|Link (CTA with arrow)"
+    language:
+      language_list: un
 image_upload:
   status: true
   scheme: public

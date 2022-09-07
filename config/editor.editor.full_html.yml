@@ -55,7 +55,11 @@ settings:
           items:
             - penn_entity
             - penn_api
-  plugins: {  }
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
 image_upload:
   status: true
   scheme: public

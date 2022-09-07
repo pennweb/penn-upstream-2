@@ -14,14 +14,13 @@
       {% for item in breadcrumb %}
         <li class="breadcrumb__item">
         <span>
-          {% set itemText = render_var(item.text) %}
-          {% if itemText is not empty %}
+          {% if item.url %}
             <a href="{{ item.url }}">{{ item.text }}</a>
           {% else %}
             {{ item.text }}
           {% endif %}
           </span>
-          {% if not loop.last and itemText is not empty %}
+          {% if not loop.last %}
             <span class="breadcrumb__divide">/</span>
           {% endif %}
         </li>

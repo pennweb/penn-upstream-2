@@ -30,11 +30,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  simplesamlphp_auth_user_enable:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   timezone:
     weight: 6
     region: content
@@ -42,10 +37,10 @@ content:
     third_party_settings: {  }
   user_picture:
     type: image_image
-    weight: -1
-    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+    weight: -1
+    region: content
 hidden: {  }
