@@ -41,6 +41,8 @@ settings:
   plugins:
     stylescombo:
       styles: 'a.btn.btn--outline-white|Button Link (Outline White)'
+    language:
+      language_list: un
 image_upload:
   status: false
   scheme: public
