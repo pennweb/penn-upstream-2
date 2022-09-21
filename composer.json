@@ -94,5 +94,6 @@
             "oomphinc/composer-installers-extender": true,
             "simplesamlphp/composer-module-installer": true
         }
-    }
+    },
+    "version": "9.4.6"
 }
